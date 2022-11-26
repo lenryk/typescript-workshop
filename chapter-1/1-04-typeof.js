@@ -1,20 +1,19 @@
 "use strict";
-exports.__esModule = true;
-var daysInWeek = 7;
-var name = "Ada Lovelace";
-var isRaining = false;
-var today = new Date();
-var months = ["January", "February", "March"];
-var notDefined = undefined;
-var nothing = null;
-var add = function (x, y) { return x + y; };
-var calculator = {
-    add: add
+Object.defineProperty(exports, "__esModule", { value: true });
+const daysInWeek = 7;
+const name = "Ada Lovelace";
+const isRaining = false;
+const today = new Date();
+const months = ["January", "February", "March"];
+const notDefined = undefined;
+const nothing = null;
+const add = (x, y) => x + y;
+const calculator = {
+    add
 };
-var everything = [daysInWeek, name, isRaining, today, months,
+const everything = [daysInWeek, name, isRaining, today, months,
     notDefined, nothing, add, calculator];
-for (var _i = 0, everything_1 = everything; _i < everything_1.length; _i++) {
-    var something = everything_1[_i];
-    var type = typeof something;
+for (const something of everything) {
+    const type = typeof something;
     console.log(something, type);
 }

@@ -1,9 +1,10 @@
-var count = 0;
+"use strict";
+let count = 0;
 function getFullName(person) {
     count += 1;
-    return "".concat(person.firstName, " ").concat(person.lastName);
+    return `${person.firstName} ${person.lastName}`;
 }
-var programmers = [
+const programmers = [
     { firstName: 'Donald', lastName: 'Knuth' },
     { firstName: 'Barbara', lastName: 'Liskow' },
     { firstName: 'Lars', lastName: 'Bak' },
@@ -15,23 +16,23 @@ var programmers = [
 ];
 // a naive and straightforward sorting function
 function naiveSortPersons(persons) {
-    return persons.slice().sort(function (first, second) {
-        var firstFullName = getFullName(first);
-        var secondFullName = getFullName(second);
+    return persons.slice().sort((first, second) => {
+        const firstFullName = getFullName(first);
+        const secondFullName = getFullName(second);
         return firstFullName.localeCompare(secondFullName);
     });
 }
+// optimized version
 function schwartzSortPersons(persons) {
-    var tuples = persons.map(function (person) { return [person, getFullName(person)]; });
-    tuples.sort(function (first, second) { return first[1].localeCompare(second[1]); });
-    var result = tuples.map(function (tuple) { return tuple[0]; });
-    return result;
+    const tuples = persons.map(person => [person, getFullName(person)]);
+    tuples.sort((first, second) => first[1].localeCompare(second[1]));
+    return tuples.map(tuple => tuple[0]);
 }
 count = 0;
-var sortedNaive = naiveSortPersons(programmers);
+const sortedNaive = naiveSortPersons(programmers);
 console.log(sortedNaive);
-console.log("When called using the naive approach, the function was called ".concat(count, " times"));
+console.log(`When called using the naive approach, the function was called ${count} times`);
 count = 0;
-var sortedSchwartz = schwartzSortPersons(programmers);
+const sortedSchwartz = schwartzSortPersons(programmers);
 console.log(sortedSchwartz);
-console.log("When called using the Schwartzian transform approach, the function was called ".concat(count, " times"));
+console.log(`When called using the Schwartzian transform approach, the function was called ${count} times`);

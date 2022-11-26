@@ -1,15 +1,16 @@
+"use strict";
 function snippet(text, length) {
     if (text.length < length) {
         return text;
     }
-    var ellipsis = "...";
-    var result = text.slice(0, length - ellipsis.length);
-    var lastSpace = result.lastIndexOf(" ");
-    result = "".concat(result.slice(0, lastSpace)).concat(ellipsis);
+    const ellipsis = "...";
+    let result = text.slice(0, length - ellipsis.length);
+    const lastSpace = result.lastIndexOf(" ");
+    result = `${result.slice(0, lastSpace)}${ellipsis}`;
     return result;
 }
 // correct call and usage
-var resultOne = snippet("TypeScript is a programming language that is a strict syntactical superset of JavaScript and adds optional static typing to the language.", 40);
+const resultOne = snippet("TypeScript is a programming language that is a strict syntactical superset of JavaScript and adds optional static typing to the language.", 40);
 console.log(resultOne);
 // // missing second parameter
 // const resultTwo = snippet("Lorem ipsum dolor sit amet");

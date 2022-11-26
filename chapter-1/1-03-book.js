@@ -1,17 +1,18 @@
+"use strict";
 // the ? properties are optional
-var warAndPeace = {
+const warAndPeace = {
     author: "Leo Tolstoy",
     title: "War and Peace",
     isRead: false
 };
-var mobyDick = {
+const mobyDick = {
     author: "Herman Melville",
     title: "Moby Dick"
 };
 function showBook(book) {
-    console.log("".concat(book.author, " wrote ").concat(book.title));
+    console.log(`${book.author} wrote ${book.title}`);
     if (book.isRead !== undefined) {
-        console.log(" I have ".concat(book.isRead ? "read" : "not read", " \nthis book"));
+        console.log(` I have ${book.isRead ? "read" : "not read"} this book`);
     }
 }
 function setPages(book, pages) {
