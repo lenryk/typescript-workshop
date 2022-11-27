@@ -1,4 +1,5 @@
 "use strict";
 function squares(array) {
-    return array.map(x => x * x);
+    const result = array.map(x => x * x);
+    return result;
 }
