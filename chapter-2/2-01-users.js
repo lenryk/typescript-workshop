@@ -1,13 +1,13 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 // assing new type to variable
-var jon;
+let jon;
 // assign data to our new variable type
 jon = {
     email: "jon@snow.com",
     roles: ["admin"]
 };
-var alice;
+let alice;
 alice = {
     email: "alice@snow.com",
     roles: ["super_admin"],
