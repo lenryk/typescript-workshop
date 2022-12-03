@@ -8,7 +8,6 @@ function arrayCompare(a1, a2) {
     }
     const a1String = a1.sort().toString();
     const a2String = a2.sort().toString();
-    console.log(a1String, a2String);
     return a1String === a2String;
 }
 console.log(`Are ${arrayone} and ${arraytwo} equal?`, arrayCompare(arrayone, arraytwo));
